@@ -57,7 +57,7 @@ For more details see the [Tech Docs GitHub Pages Publisher GitHub repository](ht
 
 ### Updating configuration
 
-Aspects of the documentation site such as the header and sidebar can be configured using the [config/tech-docs.yml](config/tech-docs.yml). Further configuration options are described on the [Tech Docs Template website: Global Configuration](https://tdt-documentation.london.cloudapps.digital/configure_project/global_configuration/).
+Aspects of the documentation site such as the header and sidebar can be configured using [config/tech-docs.yml](config/tech-docs.yml). Further configuration options are described on the [Tech Docs Template website: Global Configuration](https://tdt-documentation.london.cloudapps.digital/configure_project/global_configuration/).
 
 ## Publishing
 
