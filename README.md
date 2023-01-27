@@ -1,6 +1,6 @@
 # HMPPS Integration API Documentation Site
 
-[![repo standards badge](https://img.shields.io/badge/dynamic/json?color=blue&style=for-the-badge&logo=github&label=MoJ%20Compliant&query=%24.result&url=https%3A%2F%2Foperations-engineering-reports.cloud-platform.service.justice.gov.uk%2Fapi%2Fv1%2Fcompliant_public_repositories%2Ftemplate-documentation-site)](https://operations-engineering-reports.cloud-platform.service.justice.gov.uk/public-github-repositories.html#template-documentation-site "Link to report")
+[![repo standards badge](https://img.shields.io/badge/dynamic/json?color=blue&style=flat&logo=github&label=MoJ%20Compliant&query=%24.result&url=https%3A%2F%2Foperations-engineering-reports.cloud-platform.service.justice.gov.uk%2Fapi%2Fv1%2Fcompliant_public_repositories%2Ftemplate-documentation-site)](https://operations-engineering-reports.cloud-platform.service.justice.gov.uk/public-github-repositories.html#template-documentation-site "Link to report")
 
 This repository is used to generate the [technical documentation website](https://ministryofjustice.github.io/hmpps-integration-api-docs) for the HMPPS Integration API
 
