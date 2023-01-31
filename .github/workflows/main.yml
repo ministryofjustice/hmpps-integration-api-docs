@@ -1,0 +1,69 @@
+name: CI/CD
+on: [push, workflow_dispatch]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  format-code:
+    name: 🧹 Format code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Format code
+        uses: ministryofjustice/github-actions/code-formatter@v10
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build:
+    name: 🏗 Build application
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    container:
+      image: ministryofjustice/tech-docs-github-pages-publisher:v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Compile Markdown to HTML and create artifact
+        run: /scripts/deploy.sh
+      - name: Upload artifact to be published
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-pages
+          path: artifact.tar
+          retention-days: 1
+
+  check-for-broken-links:
+    name: 🔗 Check for broken links
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download built artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: github-pages
+          path: github-pages
+      - name: Unpack files and check URL links
+        run: |
+          cd github-pages
+          tar -xvf artifact.tar
+          npm install linkinator
+          npx linkinator . --recurse --markdown \
+          --skip https://ministryofjustice.github.io/hmpps-integration-api-docs/images/govuk-large.png
+
+  deploy:
+    name: 🚀 Deploy application
+    needs: check-for-broken-links
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v3
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
