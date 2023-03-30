@@ -38,24 +38,24 @@ There will broadly speaking be two kinds of changes - "non-breaking" changes, wh
 
 We would like to minimise the number of breaking changes, and where this is not possible, we will increment the API version and manage the migration.
 
-MoJ - must not change or remove an existing data element unless we are certain it is not in use
-MoJ - must update documentation to reflect any changes
-MoJ - may add new elements and change/remove elements that we know are not in use
-Consumers - implementation must accept new elements and changes to elements that are not in use (i.e. it must be resilient to non-breaking API changes)
+- MoJ - must not change or remove an existing data element unless we are certain it is not in use
+- MoJ - must update documentation to reflect any changes
+- MoJ - may add new elements and change/remove elements that we know are not in use
+- Consumers - implementation must accept new elements and changes to elements that are not in use (i.e. it must be resilient to non-breaking API changes)
 
 ### Breaking change
 
 Where a non-breaking change is not possible, there is then a breaking change. In this case, we will increment the version of the API
 
-MoJ - must update documentation, and explicitly call out the change between versions
-MoJ - must distribute the new documentation as soon as practical
-MoJ - must run both versions of the API, as long as this is practical, for at least 1 month
-Consumers - must commit to moving to the new version of the API within a reasonable timescale, usually 1 month
-Depending on the size of the change, MoJ may require the Supplier to go through additional re-assurance steps
+- MoJ - must update documentation, and explicitly call out the change between versions
+- MoJ - must distribute the new documentation as soon as practical
+- MoJ - must run both versions of the API, as long as this is practical, for at least 1 month
+- Consumers - must commit to moving to the new version of the API within a reasonable timescale, usually 1 month
+- Depending on the size of the change, MoJ may require the Consumer to go through additional re-assurance steps
 
 ### Ongoing assurance
 
-As part of including new functionality into the system, new processes will be available to be undertaken via the API. As these are introduced, we will ask suppliers to go through further rounds of assurance, broadly similar to the initial round described above.
+As part of including new functionality into the system, new processes will be available to be undertaken via the API. As these are introduced, we will ask consumers to go through further rounds of assurance, broadly similar to the initial round described above.
 
 ### URI Path
 
