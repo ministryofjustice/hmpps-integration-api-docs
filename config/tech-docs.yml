@@ -38,3 +38,11 @@ github_repo: ministryofjustice/hmpps-integration-api-docs
 github_branch: main
 
 api_path: https://ministryofjustice.github.io/hmpps-integration-api/openapi/api-docs.json
+
+redirects:
+  /index.html: https://ministryofjustice.github.io/hmpps-integration-api/index.html
+  /authentication.html: https://ministryofjustice.github.io/hmpps-integration-api/authentication.html
+  /api-changes-and-versioning.html: https://ministryofjustice.github.io/hmpps-integration-api/api-changes-and-versioning.html
+  /documentation/api/index.html: https://ministryofjustice.github.io/hmpps-integration-api/documentation/api/index.html
+  /documentation/adr/index.html: https://ministryofjustice.github.io/hmpps-integration-api/documentation/adr/index.html
+  /documentation/get-started/index.html: https://ministryofjustice.github.io/hmpps-integration-api/documentation/get-started/index.html
